@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public HMCMainPage(){
 
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginElementi;
-
+//
     @FindBy(xpath = "//input[@id='UserName']")
     public WebElement userNameBox;
 
@@ -48,7 +49,7 @@ public HMCMainPage(){
     @FindBy(xpath = "//table/thead/tr/th")
     public List<WebElement> theaderTabloBasliklariElementi;
 
-    @FindBy(xpath = "(//a[@title='Next'])[1]")
+    @FindBy(xpath = "//*[@id=\"datatable_ajax_paginate\"]/div/a[2]")
     public WebElement webTableSayfaDegistirmeNextOku;
 
     @FindBy(xpath = "(//div[@class='caption'])[1]")
@@ -68,6 +69,21 @@ public HMCMainPage(){
 
     @FindBy(xpath = "//a[@id='tab_images_uploader_uploadfiles']")
     public  WebElement upLoadFilesElementi;
+
+
+    public void anaSayfayaGit() {
+        Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
+
+    }
+
+    public void yoneticiOlarakGirisYap() {
+        ilkLoginElementi.click();
+        userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        idveSifreyeGirLoginButonu.click();
+    }
+
+
 
 
 
