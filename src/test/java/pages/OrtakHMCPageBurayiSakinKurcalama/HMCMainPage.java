@@ -71,10 +71,13 @@ public HMCMainPage(){
     public  WebElement upLoadFilesElementi;
 
 
+
     public void anaSayfayaGit() {
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
 
     }
+
+
 
     public void yoneticiOlarakGirisYap() {
         ilkLoginElementi.click();

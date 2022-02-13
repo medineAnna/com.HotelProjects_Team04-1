@@ -1,4 +1,4 @@
 package tests.US0003;
 
-public class US0003 {
+public class TC_005 {
 }
