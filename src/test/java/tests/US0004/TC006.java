@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
 
-public class TC005 {
+public class TC006 {
     @Test
-    public void US4TC5() {
+    public void US4TC6(){
 
         HMCMainPage hmcMainPage = new HMCMainPage();
         HMCHotelListPage hmcHotelListPage = new HMCHotelListPage();
@@ -24,15 +24,15 @@ public class TC005 {
         hmcHotelListPage.HotelListElementi.click();
         //6- "Add Hotel" butonuna tiklar.
         hmcHotelListPage.AddHotelButtonElementi.click();
-    //7- "create hotel" formunu gecerli bilgiler ile doldurur.
-  hmcHotelListPage.AddHotelFormDropdownaKadarGecerliDoldurma();
+        //7- "create hotel" formunu gecerli bilgiler ile doldurur.
+        hmcHotelListPage.AddHotelFormDropdownaKadarGecersizDoldurma();
         Select select= new Select(hmcHotelListPage.AddHotelDropdownElementi);
         select.selectByIndex(1);
-    //8- Save butonuna tiklar.
+        //8- Save butonuna tiklar.
         hmcHotelListPage.AddHotelSaveButton.click();
-    //9- "Hotel was inserted successfully" yazisini gorur.
+        //9- "Hotel was inserted successfully" yazisini gorunmez.
 
-        Assert.assertTrue(hmcHotelListPage.AddHotelBasariliKayityazisiElementi.isDisplayed());
-    //10- OK butonuna tiklar.
-        hmcHotelListPage.AddHotelBasariliKayitOkButton.click();
-}}
+        Assert.assertFalse(hmcHotelListPage.AddHotelBasariliKayityazisiElementi.isDisplayed());
+
+
+    }}
