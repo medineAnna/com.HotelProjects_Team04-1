@@ -176,7 +176,7 @@ Assert.assertTrue(odaKayitNameYazisi.isDisplayed(),"Oda Kaydi Basarisiz");
         ReusableMethods.waitFor(2);
 hotelMyCampPage.generalDataDeleteClickOkButonu.click();
 ReusableMethods.waitFor(5);
-        hmcMainPage.  yoneticiOlarakGirisYap();
+  ////input[@id='UserName']
        // ReusableMethods.waitFor(1);
         ReusableMethods.getScreenshot("Oda Silindi Success Photo");
 

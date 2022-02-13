@@ -85,9 +85,9 @@ public WebElement listOfHotelRoomsyellowSearchButton;
 /*
 @FindBy (className = "btn btn-primary")
 public WebElement generalDataDeleteOnaylamaButonu;//6
-Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
+//Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
+*/
 
- */
 public void listOfHotelRoomsNameBoxDataPush(String data){
   listOfHotelRoomsNameElementi.sendKeys(data);
 
