@@ -44,14 +44,14 @@ public class HMCHotelListPage {
 @FindBy(xpath="//div[@class='portlet box blue']")
     public WebElement CreateHotelFormElementi ;
 
-
-@FindBy(xpath="//button[@type='submit']")
+   //  //button[@type='submit']
+@FindBy(xpath="//button[.='Save']")
     public WebElement AddHotelSaveButton;
-
-@FindBy(xpath="//div[text()='Hotel was inserted successfully']")
+  //  //div[.='Hotel was inserted successfully']
+@FindBy(xpath="/html/body/div[5]/div/div/div[1]/div")
     public WebElement AddHotelBasariliKayityazisiElementi;
 
-@FindBy(xpath="//button[text()='OK']")
+@FindBy(xpath="//button[.='OK']")
     public WebElement AddHotelBasariliKayitOkButton;
 
 @FindBy(xpath="//*[@name='Name']")
