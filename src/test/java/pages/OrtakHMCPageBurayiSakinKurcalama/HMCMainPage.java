@@ -14,12 +14,15 @@ public class HMCMainPage {
     Actions actions = new Actions(Driver.getDriver());
 public HMCMainPage(){
     PageFactory.initElements(Driver.getDriver(),this);
+
     // PageFactory.initElements(Driver.getDriver(),this);
     // bu bizim driverimiza ilk degeri atiyor
     // this icinde bulundugu page sayfasinda kendi
     // driverimizin olduugunu declare etmis oluyor
 }
-//Buradaki Kodalri kimse Degistirilmeyecek Ekleme Yapilmayacak
+
+
+//Buradaki Kodlari kimse Degistirilmeyecek Ekleme Yapilmayacak
 //Sadece Kullanabilirsiniz
 
     @FindBy(xpath = "//a[.='Log in']")
@@ -69,6 +72,9 @@ public HMCMainPage(){
 
     @FindBy(xpath = "//a[@id='tab_images_uploader_uploadfiles']")
     public  WebElement upLoadFilesElementi;
+
+    @FindBy (xpath = ("(//div[@class='caption'])[2]"))
+    public WebElement generalDataElementi;
 
 
     public void anaSayfayaGit() {

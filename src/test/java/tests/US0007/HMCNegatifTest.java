@@ -10,8 +10,8 @@ public class HMCNegatifTest {
     SoftAssert softAssert;
     @Test(priority = -100)
     public void test(){
-        hotelMyCampPage=   new HotelMyCampPage();
-        hotelMyCampPage.anaSayfayaGit();
+
+        //hotelMyCampPage.anaSayfayaGit();
     }
 
 
