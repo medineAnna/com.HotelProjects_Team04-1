@@ -18,7 +18,7 @@ import utilities.ReusableMethods;
 import java.io.IOException;
 import java.util.List;
 
-public class HMCPozitiftest {
+public class HMCPozitiftestUS0007 {
 Actions actions = new Actions(Driver.getDriver());
 HMCMainPage hmcMainPage=new HMCMainPage();
 SoftAssert softAssert;

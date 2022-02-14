@@ -1,11 +1,6 @@
 package tests.US0007;
 
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-
-import pages.pagesUS0007.HotelMyCampPage;
-
-public class HMCNegatifTest {
+public class HMCNegatifTestUS0007 {
     /*
     HotelMyCampPage hotelMyCampPage;
     SoftAssert softAssert;
