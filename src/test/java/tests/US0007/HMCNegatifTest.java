@@ -6,6 +6,7 @@ import org.testng.asserts.SoftAssert;
 import pages.pagesUS0007.HotelMyCampPage;
 
 public class HMCNegatifTest {
+    /*
     HotelMyCampPage hotelMyCampPage;
     SoftAssert softAssert;
     @Test(priority = -100)
@@ -14,6 +15,6 @@ public class HMCNegatifTest {
         //hotelMyCampPage.anaSayfayaGit();
     }
 
-
+*/
 
 }

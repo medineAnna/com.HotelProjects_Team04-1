@@ -82,13 +82,20 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     @FindBy (xpath = "//div[2]/button[2]")
     public  WebElement generalDataDeleteClickOkButonu;
 
-/*
-@FindBy (className = "btn btn-primary")
-public WebElement generalDataDeleteOnaylamaButonu;//6
-Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
+    @FindBy(xpath = "//div[.='HotelRoom successfully deleted']")
+    public WebElement odaSilindiSuccessText;
 
- */
-public void listOfHotelRoomsNameBoxDataPush(String data){
+    @FindBy(xpath = "//input[@id='UserName']")
+    public WebElement endUserName;
+
+    @FindBy(xpath = "//input[@id='Password']")
+    public WebElement endPassword;
+
+    @FindBy(xpath = "//button[.='Log in']")
+    public WebElement endLogInButton;
+
+
+    public void listOfHotelRoomsNameBoxDataPush(String data){
   listOfHotelRoomsNameElementi.sendKeys(data);
 
 }
@@ -184,8 +191,8 @@ generalDataSaveButonuElementi.click();
 }
 
     public void hotelRoomDeleteDatasiGonderme(String Code,String Name ,
-                                                  String Location,String Description,String PriceDouble,String MaxAdultCount,
-                                                  String MaxChildrenCount) {
+String Location,String Description,String PriceDouble,String MaxAdultCount,
+String MaxChildrenCount) {
         hotelDDMethod(15);//Cyber Space
         ReusableMethods.waitFor(2);
         generalDataCodeElementi.clear();
@@ -233,12 +240,17 @@ public void hotelDDMethod(int index){
         Select select=new Select(generalRoomTypeDDElementi);
         //6
         select.selectByIndex(index);
-
     }
 
- //DIKKAAAT
- @FindBy(xpath = "//div[.='HotelRoom successfully deleted']")
- public WebElement odaSilindiSuccessText;
+public void closeTheWindow(){
+ReusableMethods.waitFor(5);
+Driver.getDriver().close();
+}
 
+/*
+@FindBy (className = "btn btn-primary")
+public WebElement generalDataDeleteOnaylamaButonu;//6
+//Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
+*/
 
 }
