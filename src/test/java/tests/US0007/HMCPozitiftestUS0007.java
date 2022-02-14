@@ -44,8 +44,7 @@ public void ilkLoginButonuGorunurveAktifmiTesti() {
 // ve Tiklayip  onceden belirlenen sifreyle giris yapar.
 Assert.assertTrue(hmcMainPage.ilkLoginElementi.isDisplayed(), "Ilk Anasayfa Login Butonu GORUNUR  DEGIL");
 Assert.assertTrue(hmcMainPage.ilkLoginElementi.isEnabled(), "Ilk Anasayfa Login Butonu AKTIF  DEGIL");
-
-
+    ReusableMethods.waitFor(3);
     }
 
 @Test(priority = 2)
@@ -58,6 +57,7 @@ hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
 hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
 hmcMainPage. idveSifreyeGirLoginButonu.click();
 Assert.assertTrue(hmcMainPage.yoneticiOlarakGirisYapilincaCikanListOfUsersElementi.isDisplayed(), "Yonetici Olarak Sayfaya Giris Yapilamadi FAILED");
+    ReusableMethods.waitFor(3);
     }
 
 @Test(priority = 3)
@@ -67,9 +67,11 @@ hmcMainPage.  yoneticiOlarakGirisYap();
 Assert.assertTrue(hmcMainPage.hotelManagementElementi.isDisplayed(), "Hotel Management Butonu Gozukmuyor FAILED");
 Assert.assertTrue(hmcMainPage.hotelManagementElementi.isEnabled(), "Hotel Management Butonu Aktif DEGIL FAILED");
 hmcMainPage. hotelManagementElementi.click();
+ReusableMethods.waitForVisibility(hmcMainPage.hotelRoomsElementi,20);
 // HotelRoms Gorunur Aktifmi
 Assert.assertTrue(hmcMainPage.hotelRoomsElementi.isDisplayed(), "Hotel Rooms Gozukmuyor FAILED");
 Assert.assertTrue(hmcMainPage.hotelRoomsElementi.isEnabled(), "Hotel Rooms Aktif DEGIL FAILED");
+    ReusableMethods.waitFor(3);
     }
 
 @Test(priority = 4)
@@ -84,11 +86,9 @@ for (WebElement each :hmcMainPage.theaderTabloBasliklariElementi) {
     System.out.print(each.getText() + " ,");
 }
 //Tablodaki 10. Satir 5. sutun Data Bilgisini Yazdirir
-
 Assert.assertTrue(hotelMyCampPage.hotelRoomsIlkSayfaWebTables(10, 5).isEnabled(), "1. Sayfa Web 10 satir 5. Sutun Bilgisi Gorunmuyor FAILED");
 System.out.println("webTableIstediginSutunuYazdir =>>" +hotelMyCampPage.hotelRoomsIlkSayfaWebTables(10, 5).getText());
-
-
+    ReusableMethods.waitFor(3);
     }
 
 @Test(priority = 5)
@@ -96,6 +96,7 @@ public void webTablein5SayfadakiBilgilereErismeTEsti() throws IOException {
 //6-)Web Table 5.Tablo Sayfasi Bilgilerine Eristigini Screen Shot la Teyit Et
 hotelMyCampPage. hotelRoomsWebTablinIsteginSayfasinaGit(5);
 //ReusableMethods.getScreenshot("WebTable5.SayfaGoruntusu");
+    ReusableMethods.waitFor(3);
     }
 
 @Test(priority = 6)
@@ -115,30 +116,31 @@ Assert.assertTrue(hmcMainPage.editHotelRoomYaziElementi.isEnabled(), "WebTable 5
 //Propertiese Tiklandi testi yap
 hmcMainPage.propertiesSekmesiElementi.click();
 Assert.assertTrue(hmcMainPage.addPropertyYaziElementi.isEnabled());
+    ReusableMethods.waitFor(3);
     }
-
 
 @Test(priority = 7)
 public void photosSayfasinaGirisTesti() {
-//9
+//8
 hotelMyCampPage.direkPhotostSayfasinaGit();
 Assert.assertTrue(hmcMainPage.upLoadFilesElementi.isEnabled());
+    ReusableMethods.waitFor(3);
     }
-
 
 @Test(priority = 8)
 public void propertiesSayfasiErisimTesti() {
-//10
+//9
 hotelMyCampPage.direkPropertiesSayfasinaGit();
 Select select = new Select(hmcMainPage.propertiesdekiTipDropDownElementi);
 // Propertiesde Girdigimizi Kontrol Icin Tip DD leri yazdiriniz
 List<WebElement> tipDDElementi = select.getOptions();
 for (WebElement each : tipDDElementi) {
-    System.out.print("Tip DD Listesi =>" + each.getText() + " ");
+System.out.print("Tip DD Listesi =>" + each.getText() + " ");
+    ReusableMethods.waitFor(3);
 }
     }
 @Test(priority = 9)
-//11
+//10
 public void odaBilgileriGuncellemeTesti(){
 hotelMyCampPage.direkGeneralDataSayfasinaGit();
 hotelMyCampPage. hotelRoomGuncellemeDatasiGonderme("0007","MustafaDRoom1",
@@ -154,12 +156,12 @@ ReusableMethods.waitFor(3);
 String actualText=hotelMyCampPage.listOfHotelRoomsNameElementi.getText();
 WebElement odaKayitNameYazisi=Driver.getDriver().findElement(By.xpath("//td[.='MustafaDRoom1']"));
 Assert.assertTrue(odaKayitNameYazisi.isDisplayed(),"Oda Kaydi Basarisiz");
-
+    ReusableMethods.waitFor(3);
 }
 
 @Test(priority = 10)
 public void odaBilgileriSilmeTesti() throws IOException {
-//12
+//11
 hotelMyCampPage.direkGeneralDataSayfasinaGit();
 hotelMyCampPage.hotelRoomDeleteDatasiGonderme("0007","MustafaDRoom1",
 "Muslihittin mah. No:48  Afrika ",
@@ -170,13 +172,14 @@ hotelMyCampPage.generalDataUpdateOKButonElementi.click();
 ReusableMethods.waitFor(2);
 hotelMyCampPage.generalDataDeleteButonuElementi.click();
 ReusableMethods.waitFor(2);
-hotelMyCampPage.generalDataDeleteClickOkButonu.click();
+hotelMyCampPage.generalDataSaveClickOkButonu.click();// ////*********
 hotelMyCampPage.endUserName.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
 hotelMyCampPage.endPassword.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
 hotelMyCampPage.endLogInButton.click();
 hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom1");
 hotelMyCampPage.listOfHotelRoomsyellowSearchButton.click();
-//ReusableMethods.getScreenshot("Oda Bilgileri Silindi Teyit Photos");
+ReusableMethods.getScreenshot("Oda Bilgileri Silindi Teyit Photos");
+    ReusableMethods.waitFor(3);//wsadasd
     }
 @AfterMethod
 public void tearDown(){

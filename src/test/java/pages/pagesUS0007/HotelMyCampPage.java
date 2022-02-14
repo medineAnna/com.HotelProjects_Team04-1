@@ -80,7 +80,7 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     public WebElement generalDataDeleteSuccessText;//6
 
     @FindBy (xpath = "//div[2]/button[2]")
-    public  WebElement generalDataDeleteClickOkButonu;
+    public  WebElement generalDataSaveClickOkButonu;
 
     @FindBy(xpath = "//div[.='HotelRoom successfully deleted']")
     public WebElement odaSilindiSuccessText;
@@ -94,6 +94,10 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement endLogInButton;
 
+
+ //@FindBy (className = "btn btn-primary")
+ //public WebElement generalDataDeleteOnaylamaButonu5;//6
+    //Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
 
     public void listOfHotelRoomsNameBoxDataPush(String data){
   listOfHotelRoomsNameElementi.sendKeys(data);
@@ -243,7 +247,7 @@ public void hotelDDMethod(int index){
     }
 
 public void closeTheWindow(){
-ReusableMethods.waitFor(5);
+
 Driver.getDriver().close();
 }
 

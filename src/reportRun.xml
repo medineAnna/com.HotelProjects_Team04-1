@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="rapor icin">
-    <test name="Html reports">
-        <packages>
-            <package name="src/test/java/tests/US0007"></package>
-        </packages>
-    </test>
-</suite>

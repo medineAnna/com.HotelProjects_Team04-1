@@ -46,7 +46,7 @@ public HMCMainPage(){
     @FindBy(xpath = "//span[.='Hotel Management']")
     public WebElement hotelManagementElementi;
 
-    @FindBy(xpath = "//a[@href='/admin/HotelRoomAdmin']")
+    @FindBy(xpath = "//div[3]/div[1]/div/ul/li[3]/ul/li[2]/ul/li[2]/a")
     public WebElement hotelRoomsElementi;
 
     @FindBy(xpath = "//table/thead/tr/th")
