@@ -31,7 +31,7 @@ public HMCMainPage(){
     @FindBy(xpath = "//input[@id='UserName']")
     public WebElement userNameBox;
 
-    @FindBy(id = "Password")
+    @FindBy(id = "Password")git
     public WebElement passwordBox;
 
     @FindBy(id = "btnSubmit")
@@ -46,7 +46,7 @@ public HMCMainPage(){
     @FindBy(xpath = "//span[.='Hotel Management']")
     public WebElement hotelManagementElementi;
 
-    @FindBy(xpath = "//a[@href='/admin/HotelRoomAdmin']")
+    @FindBy(xpath = "//div[3]/div[1]/div/ul/li[3]/ul/li[2]/ul/li[2]/a")
     public WebElement hotelRoomsElementi;
 
     @FindBy(xpath = "//table/thead/tr/th")
