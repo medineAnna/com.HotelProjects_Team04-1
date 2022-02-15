@@ -11,11 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 //
-public class HotelMyCampPage   {
+public class HotelMyCampPage   extends  HMCMainPage{
     Actions actions = new Actions(Driver.getDriver());
 HMCMainPage hmcMainPage=new HMCMainPage();
     public HotelMyCampPage () {
@@ -26,6 +27,8 @@ HMCMainPage hmcMainPage=new HMCMainPage();
         // driverimizin olduugunu declare etmis oluyor
     }
 
+@FindBy (xpath = "//li[contains( @id, 'Log')]")
+public WebElement hmcIlkLogin;
 
 @FindBy(xpath = "//select[@title='Select Hotel']")
 public WebElement generalDatahotelDDElementi;//5
@@ -94,6 +97,8 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement endLogInButton;
 
+    @FindBy (xpath = "(//div[@class='caption'])[2]")
+    public WebElement generalDataHotelroomDataText;
 
  //@FindBy (className = "btn btn-primary")
  //public WebElement generalDataDeleteOnaylamaButonu5;//6
@@ -112,7 +117,7 @@ public WebElement listOfHotelRoomsyellowSearchButton;
 
 
     public void hotelRoomsWebTablinIsteginSayfasinaGit(int sayfa) {
-  hmcMainPage. yoneticiOlarakGirisYap();
+  yoneticiOlarakGirisYap2();
   hmcMainPage. hotelManagementElementi.click();
    hmcMainPage.hotelRoomsElementi.click();
 
@@ -248,8 +253,24 @@ public void hotelDDMethod(int index){
 
 public void closeTheWindow(){
 
-Driver.getDriver().close();
+Driver.closeDriver();
 }
+    public void yoneticiOlarakGirisYap2() {
+        HMCMainPage hmcMainPage=new HMCMainPage();
+        hmcIlkLogin.click();
+        hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+        hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+        hmcMainPage.    idveSifreyeGirLoginButonu.click();
+    }
+
+
+
+
+
+
+
+
+
 
 /*
 @FindBy (className = "btn btn-primary")
