@@ -27,7 +27,7 @@ public HMCMainPage(){
 
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginElementi;
-//
+
     @FindBy(xpath = "//input[@id='UserName']")
     public WebElement userNameBox;
 
