@@ -3,6 +3,7 @@ package tests.US0003;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.pagesUS0003.HMCPageUS003;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -14,9 +15,11 @@ public class TC_005 {
     @Test
     public void us3Tc002() throws IOException {
 
+
         HMCPageUS003 hmcPageUS003 = new HMCPageUS003();
         //Step   1-Kullanici hotelmycamp sayfasına gider
         hmcPageUS003.anaSayfayaGit();
+
 
         //Step 2-Login butonunu tiklar
         hmcPageUS003.ilkLoginElementi.click();
@@ -41,5 +44,8 @@ public class TC_005 {
         ReusableMethods.getScreenshot("User Data was inserted successfully yazisi");
         Assert.assertTrue(hmcPageUS003.UseDatawasInsertedSuccessfullyyazisi.isDisplayed());
         hmcPageUS003.uDwISyazisiOkButonu.click();
+
+
+        Driver.closeDriver();
     }
 }

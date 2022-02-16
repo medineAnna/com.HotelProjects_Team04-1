@@ -3,6 +3,7 @@ package tests.US0003;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.pagesUS0003.HMCPageUS003;
+import utilities.Driver;
 
 import java.io.IOException;
 
@@ -36,6 +37,7 @@ public class TC_004 {
         Assert.assertTrue(hmcPageUS003.saveButonu.isDisplayed());
         hmcPageUS003.saveButonu.click();
 
+        Driver.closeDriver();
 
 
 

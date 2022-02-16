@@ -10,51 +10,54 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
 public class Driver {
-    private Driver(){//artik driverdan obje baska class obje uretemez
-// iste private yapmaya 13. satirda SingletonPattern denir
+
+    private  Driver(){
+
     }
-    public static WebDriver driver;
 
-    public static WebDriver getDriver() {
+    private static WebDriver  driver;
 
-        if (driver == null) {//bu if sayesindfe kod calisirken bir kere new keyword ile driver olustrudugumuz
-            //icin bu if blogu 1 kere calisacak ve 2.ce if blogu devreye girmeyecektir
-            //**burdaki null i  drivera deger atanmamaissa anlaminda kulladik onemli *****
+    public static WebDriver getDriver(){
 
-            switch (ConfigReader.getProperty("browser")) {
+
+
+        if(driver==null){   // bu if sayesinde kod calisirken bir kere new keyword ile driver olusturulaca
+            // diger kullanimlarda new devreye girmeyecek
+            switch (ConfigReader.getProperty("browser")){
+
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver=new ChromeDriver();
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                    driver=new FirefoxDriver();
                     break;
                 case "opera":
                     WebDriverManager.operadriver().setup();
-                    driver = new OperaDriver();
+                    driver=new OperaDriver();
                     break;
                 case "safari":
                     WebDriverManager.safaridriver().setup();
-                    driver = new SafariDriver();
+                    driver=new SafariDriver();
                     break;
                 default:
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver=new ChromeDriver();
             }
+
         }
-        driver.manage().window().maximize();
+
+       driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         return driver;
     }
 
-    public static void closeDriver() {
-        if (driver != null) {//burda drivera deger atanmissa anlaminda kullandik
+    public static void closeDriver(){
+        if (driver!=null){
             driver.quit();
-            driver = null;
+            driver=null;
         }
 
     }
-
-
 }

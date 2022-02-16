@@ -30,6 +30,7 @@ public class TC_001 {
        hmcPageUS003.createNewAccountButonu.click();
 
 
+        Driver.closeDriver();
 
     }
 

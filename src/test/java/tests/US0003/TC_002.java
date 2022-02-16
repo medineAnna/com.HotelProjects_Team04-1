@@ -33,6 +33,7 @@ public class TC_002 {
         ReusableMethods.getScreenshot("'Registration Form' yazisi" );
 
 
+        Driver.closeDriver();
 
 
 

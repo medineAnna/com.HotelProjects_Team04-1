@@ -3,6 +3,7 @@ package tests.US0003;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.pagesUS0003.HMCPageUS003;
+import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class TC_003 {
 
 
 
+        Driver.closeDriver();
 
 
 
