@@ -202,37 +202,38 @@ generalDataSaveButonuElementi.click();
     public void hotelRoomDeleteDatasiGonderme(String Code,String Name ,
 String Location,String Description,String PriceDouble,String MaxAdultCount,
 String MaxChildrenCount) {
-        hotelDDMethod(15);//Cyber Space
-        ReusableMethods.waitFor(2);
-        generalDataCodeElementi.clear();
-        generalDataCodeElementi.sendKeys(Code);
+hotelDDMethod(15);//Cyber Space
+ReusableMethods.waitFor(2);
+generalDataCodeElementi.clear();
+generalDataCodeElementi.sendKeys(Code);
 
-        ReusableMethods.waitFor(2);
-        getGeneralDataNameElementi.clear();
-        getGeneralDataNameElementi.sendKeys(Name);
-        ReusableMethods.waitFor(2);
+ReusableMethods.waitFor(2);
+getGeneralDataNameElementi.clear();
+getGeneralDataNameElementi.sendKeys(Name);
+ReusableMethods.waitFor(2);
 
-        generalDataLocationElementi.clear();
-        generalDataLocationElementi.sendKeys(Location);
-        ReusableMethods.waitFor(2);
+generalDataLocationElementi.clear();
+generalDataLocationElementi.sendKeys(Location);
+ReusableMethods.waitFor(2);
 
-        generalDataDescriptionElementi.clear();
-        generalDataDescriptionElementi.sendKeys(Description);
-        ReusableMethods.waitFor(2);
+generalDataDescriptionElementi.clear();
+generalDataDescriptionElementi.sendKeys(Description);
+ReusableMethods.waitFor(2);
 
-        generalDataPriceElementi.clear();
-        generalDataPriceElementi.sendKeys(PriceDouble);
-        ReusableMethods.waitFor(2);
+generalDataPriceElementi.clear();
+generalDataPriceElementi.sendKeys(PriceDouble);
+ReusableMethods.waitFor(2);
 
-        roomTypeDDMethod(6);
-        ReusableMethods.waitFor(2);
-        generalDataMaxAdultCountElementi.clear();
-        generalDataMaxAdultCountElementi.sendKeys(MaxAdultCount);
-        ReusableMethods.waitFor(2);
-        generalDataMaxChildrenCountElementi.clear();
-        generalDataMaxChildrenCountElementi.sendKeys(MaxChildrenCount);
-        if (!generalDataIsAvailableElementi.isSelected()) {
-            generalDataIsAvailableElementi.click();
+roomTypeDDMethod(6);
+ReusableMethods.waitFor(2);
+generalDataMaxAdultCountElementi.clear();
+generalDataMaxAdultCountElementi.sendKeys(MaxAdultCount);
+ReusableMethods.waitFor(2);
+generalDataMaxChildrenCountElementi.clear();
+generalDataMaxChildrenCountElementi.sendKeys(MaxChildrenCount);
+
+if (!generalDataIsAvailableElementi.isSelected()) {
+generalDataIsAvailableElementi.click();
         }
 
     }
@@ -256,15 +257,17 @@ public void closeTheWindow(){
 Driver.closeDriver();
 }
     public void yoneticiOlarakGirisYap2() {
-        HMCMainPage hmcMainPage=new HMCMainPage();
-        hmcIlkLogin.click();
-        hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
-        hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
-        hmcMainPage.    idveSifreyeGirLoginButonu.click();
+HMCMainPage hmcMainPage=new HMCMainPage();
+hmcIlkLogin.click();
+hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+hmcMainPage.    idveSifreyeGirLoginButonu.click();
     }
 
-
-
+@FindBy (xpath = "//span[text()='Create a new account']")
+public WebElement createaNewAccountButonu;
+@FindBy (xpath = "//input[@name='UserName']")
+public WebElement userNameBox07;
 
 
 

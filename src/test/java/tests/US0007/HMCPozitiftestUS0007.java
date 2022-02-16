@@ -16,7 +16,7 @@ import utilities.ReusableMethods;
 import java.io.IOException;
 import java.util.List;
 
-public class HMCPozitiftestUS0007 extends HotelMyCampPage {
+public class HMCPozitiftestUS0007 {
 Actions actions = new Actions(Driver.getDriver());
 HMCMainPage hmcMainPage=new HMCMainPage();
 SoftAssert softAssert;
@@ -29,7 +29,7 @@ hmcMainPage.anaSayfayaGit();
 
 @Test
 public void AhotelMyCampUrlTesti() {
-    ReusableMethods.waitFor(3);
+  ReusableMethods.waitFor(2);
 String actualHMCUrl = Driver.getDriver().getCurrentUrl();
 String expectedHMCUrl = "https://www.hotelmycamp.com/";
 softAssert = new SoftAssert();
@@ -40,9 +40,9 @@ softAssert.assertAll();
 
     }
 
-    @Test
+@Test
 public void BilkLoginButonuGorunurveAktifmiTesti() {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
 // 2-)Yonetici Login Butonunun Gorunur Aktif  Oldugunu Kontrol Eder
 // ve Tiklayip  onceden belirlenen sifreyle giris yapar.
 Assert.assertTrue(hotelMyCampPage.hmcIlkLogin.isDisplayed(), "Ilk Anasayfa Login Butonu GORUNUR  DEGIL");
@@ -52,12 +52,16 @@ Assert.assertTrue(hotelMyCampPage.hmcIlkLogin.isEnabled(), "Ilk Anasayfa Login B
 Driver.closeDriver();
     }
 
+
+
     @Test
 public void CsayfayaSifreyleGirisYapildiginaDairTest() {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
 //3-) Yonetici Onceden Belirlenen Sifreyle Giris Yaptigini Teyit Eder
 //Ve Yonetici Hotel Management (DD) Aktif Oldugunu Teyit Eder
-hotelMyCampPage. hmcIlkLogin.click();
+//hotelMyCampPage. hmcIlkLogin.click();
+WebElement ilkLoginButonunaTikla=Driver.getDriver().findElement(By.xpath("//li[contains( @id, 'Log')]"));
+ilkLoginButonunaTikla.click();
 Assert.assertTrue(hmcMainPage.sifreGirmeSayfasiCategories.isDisplayed(), "ilk Login Butonuna Tiklanamadi FAILED");
 hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
 hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
@@ -71,7 +75,7 @@ Assert.assertTrue(hmcMainPage.yoneticiOlarakGirisYapilincaCikanListOfUsersElemen
 
     @Test
 public void DhotelManagementAndHotelRoomsGozukuyorveAktifmiTesti() {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
         hotelMyCampPage. hmcIlkLogin.click();
         hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
         hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
@@ -92,7 +96,7 @@ Assert.assertTrue(hmcMainPage.hotelRoomsElementi.isEnabled(), "Hotel Rooms Aktif
 
     @Test
 public void EhotelRoomsSayfayaTiklanincaSayfaninAktifOldugunaDairTest() {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
 // 5-)Yonetici Hotel Roomsa Tiklar
 hotelMyCampPage. yoneticiOlarakGirisYap2();
 hmcMainPage.  hotelManagementElementi.click();
@@ -112,7 +116,7 @@ System.out.println("webTableIstediginSutunuYazdir =>>" +hotelMyCampPage.hotelRoo
 
     @Test
 public void FwebTablein5SayfadakiBilgilereErismeTEsti() throws IOException {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
 //6-)Web Table 5.Tablo Sayfasi Bilgilerine Eristigini Screen Shot la Teyit Et
 hotelMyCampPage. hotelRoomsWebTablinIsteginSayfasinaGit(5);
 //ReusableMethods.getScreenshot("WebTable5.SayfaGoruntusu");
@@ -123,7 +127,7 @@ hotelMyCampPage. hotelRoomsWebTablinIsteginSayfasinaGit(5);
 
     @Test
 public void GwebTable5inciSayfa10SatirDetailsvePropertieseGirisTesti() {
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
 //  7-) //WebTable 5. safya 10. Satir daki Details Butonunun
 //  Erisilebilir Oldugunu Kontrol Ederek
 //  Details Butonuna Tikla ve Tiklandigini Kontrol Et
@@ -145,7 +149,7 @@ Assert.assertTrue(hmcMainPage.addPropertyYaziElementi.isEnabled());
     }
     @Test
 public void HgeneralDataSayfasinaGirisTesti(){
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
     hotelMyCampPage.direkGeneralDataSayfasinaGit();
     Assert.assertTrue(hotelMyCampPage.generalDataHotelroomDataText.isDisplayed());
         Driver.closeDriver();
@@ -153,7 +157,7 @@ public void HgeneralDataSayfasinaGirisTesti(){
 
     @Test
 public void JphotosSayfasinaGirisTesti() {
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 //8
 hotelMyCampPage.direkPhotostSayfasinaGit();
 Assert.assertTrue(hmcMainPage.upLoadFilesElementi.isEnabled());
@@ -163,7 +167,7 @@ Assert.assertTrue(hmcMainPage.upLoadFilesElementi.isEnabled());
 
     @Test
 public void KpropertiesSayfasiErisimTesti() {
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 //9
 hotelMyCampPage.direkPropertiesSayfasinaGit();
 Select select = new Select(hmcMainPage.propertiesdekiTipDropDownElementi);
@@ -179,7 +183,7 @@ System.out.print("Tip DD Listesi =>" + each.getText() + " ");
     @Test
 //10
 public void LodaBilgileriGuncellemeTesti(){
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 hotelMyCampPage.direkGeneralDataSayfasinaGit();
 hotelMyCampPage. hotelRoomGuncellemeDatasiGonderme("0007","MustafaDRoom1",
 "Muslihittin mah. No:48  Afrika ",
@@ -200,7 +204,7 @@ Assert.assertTrue(odaKayitNameYazisi.isDisplayed(),"Oda Kaydi Basarisiz");
 
     @Test
 public void ModaBilgileriSilmeTesti() throws IOException {
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 //11
 hotelMyCampPage.direkGeneralDataSayfasinaGit();
 hotelMyCampPage.hotelRoomDeleteDatasiGonderme("0007","MustafaDRoom1",
