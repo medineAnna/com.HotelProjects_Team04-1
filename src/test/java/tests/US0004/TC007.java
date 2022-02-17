@@ -17,9 +17,8 @@ public class TC007 extends TestBaseRapor {
 
     @Test
     public void US4TC7() {
-        extentTest=extentReports.createTest("US004TC05",
-                "form gecerli bilgilerle doldurulup Save edildiginde \"Hotel was " +
-                        "inserted successfully\" yazisi ciktigi ve ok butonunun tiklanabilir oldugu test edildi ");
+        extentTest=extentReports.createTest("US004TC07",
+                "form gecerli bilgilerle doldurulup Save edildiginde Hotel list'e eklendigi test edildi");
 
         HMCMainPage hmcMainPage = new HMCMainPage();
         HMCHotelListPage hmcHotelListPage = new HMCHotelListPage();
@@ -73,6 +72,6 @@ hmcHotelListPage.HotelListSearchNameTextBox.sendKeys(ConfigReader.getProperty("h
         extentTest.info("search edildi");
         //14- Listede olusturdugu oteli gorur.
         Assert.assertFalse(hmcHotelListPage.FirstHotelAtSearchList.getText().isEmpty());
-        extentTest.pass("Eklenen otel otel listte GORULDU");
+        extentTest.pass("Eklenen otel hotel listte GORULDU");
     }
 }
