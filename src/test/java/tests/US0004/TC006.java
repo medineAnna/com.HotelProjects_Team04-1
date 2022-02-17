@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class TC006 extends TestBaseRapor {
     @Test
-    public void US4TC6() throws IOException {
+    public void US4TC6()  {
         extentTest=extentReports.createTest("US004TC06",
                 "form gecersiz bilgilerle doldurulup Save edildiginde \"Hotel was " +
                         "inserted successfully\" yazisinin cikmadigi test edildi");
