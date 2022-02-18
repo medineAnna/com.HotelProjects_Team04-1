@@ -25,7 +25,7 @@ public class TC004 extends TestBaseRapor {
     US009Page us009Page;
     @Test
     public void roomReservation() {
-        extentTest=extentReports.createTest("US0009_TC03", "Edit Hotel room reservation Test");
+        extentTest=extentReports.createTest("US0009_TC04", "Edit Hotel room reservation and save Test");
 
         hmcMainPage=new HMCMainPage();
         Driver.getDriver().get(ConfigReader.getProperty("HMCUrl"));
