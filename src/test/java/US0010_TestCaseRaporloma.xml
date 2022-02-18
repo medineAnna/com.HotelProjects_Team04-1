@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="hotel team04 US0010">
+    <test name="US0010">
+        <classes>
+            <class name="tests.US0010.TestCase01"></class>
+            <class name="tests.US0010.TestCase02"></class>
+            <class name="tests.US0010.TestCase03"></class>
+            <class name="tests.US0010.TestCase04"></class>
+            <class name="tests.US0010.TestCase05"></class>
+        </classes>
+    </test>
+</suite>
