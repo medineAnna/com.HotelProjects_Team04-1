@@ -18,7 +18,7 @@ public class TC003 extends TestBaseRapor {
 HMCMainPage hmcMainPage;
     US009Page us009Page;
     @Test
-    public void roomReservation() {
+    public void editRoomReservation() {
         extentTest=extentReports.createTest("US0009_TC03", "Edit Hotel room reservation Test");
 
         hmcMainPage=new HMCMainPage();
