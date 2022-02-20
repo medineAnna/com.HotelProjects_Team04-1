@@ -17,20 +17,18 @@ public class HMCMainPage {
     }
     //Buradaki Kodlari kimse Degistirilmeyecek Ekleme Yapilmayacak
 //Sadece Kullanabilirsiniz
-<<<<<<< HEAD
 
 
 
 
-=======
->>>>>>> 8f7976f84116cf35d1aa079006434c99df08ee7b
+
+
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginElementi;
-<<<<<<< HEAD
 
-=======
-    //
->>>>>>> mustafaUS0007
+
+
+
     @FindBy(xpath = "//input[@id='UserName']")
     public WebElement userNameBox;
     @FindBy(id = "Password")
