@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="com.HotelProjects_Team04" />
+        <module name="com.Batch44POM" />
         <module name="com.Team04_HotelProject" />
       </profile>
     </annotationProcessing>
