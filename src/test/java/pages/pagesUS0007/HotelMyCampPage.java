@@ -11,11 +11,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 //
-public class HotelMyCampPage   {
+public class HotelMyCampPage   extends  HMCMainPage{
     Actions actions = new Actions(Driver.getDriver());
 HMCMainPage hmcMainPage=new HMCMainPage();
     public HotelMyCampPage () {
@@ -26,6 +27,15 @@ HMCMainPage hmcMainPage=new HMCMainPage();
         // driverimizin olduugunu declare etmis oluyor
     }
 
+    @FindBy (xpath="//span[@class='username username-hide-on-mobile']")
+    public WebElement managerDropDownButton;
+
+    @FindBy(xpath = "//i[@class='icon-key']")
+    public WebElement logOutButton;
+
+
+@FindBy (xpath = "//li[contains( @id, 'Log')]")
+public WebElement hmcIlkLogin;
 
 @FindBy(xpath = "//select[@title='Select Hotel']")
 public WebElement generalDatahotelDDElementi;//5
@@ -94,6 +104,8 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement endLogInButton;
 
+    @FindBy (xpath = "(//div[@class='caption'])[2]")
+    public WebElement generalDataHotelroomDataText;
 
  //@FindBy (className = "btn btn-primary")
  //public WebElement generalDataDeleteOnaylamaButonu5;//6
@@ -112,7 +124,7 @@ public WebElement listOfHotelRoomsyellowSearchButton;
 
 
     public void hotelRoomsWebTablinIsteginSayfasinaGit(int sayfa) {
-  hmcMainPage. yoneticiOlarakGirisYap();
+  yoneticiOlarakGirisYap2();
   hmcMainPage. hotelManagementElementi.click();
    hmcMainPage.hotelRoomsElementi.click();
 
@@ -148,15 +160,15 @@ public WebElement listOfHotelRoomsyellowSearchButton;
       hmcMainPage.  photosSekmesiElementi.click();
     }
     public void direkGeneralDataSayfasinaGit(){
-        hotelRoomsWebTablinIsteginSayfasinaGit(5);
-        webTableSayfasindakiIsteginDetailsButonunaDirekTikla(10, 9);
+        hotelRoomsWebTablinIsteginSayfasinaGit(4);
+        webTableSayfasindakiIsteginDetailsButonunaDirekTikla(6, 9);
     }
 
 
 public void hotelRoomGuncellemeDatasiGonderme(String Code,String Name ,
 String Location,String Description,String PriceDouble,String MaxAdultCount,
 String MaxChildrenCount){
-hotelDDMethod(15);//Cyber Space
+hotelDDMethod(10);//Cyber Space
 ReusableMethods.waitFor(2);
 generalDataCodeElementi.clear();
 generalDataCodeElementi.sendKeys(Code);
@@ -197,37 +209,38 @@ generalDataSaveButonuElementi.click();
     public void hotelRoomDeleteDatasiGonderme(String Code,String Name ,
 String Location,String Description,String PriceDouble,String MaxAdultCount,
 String MaxChildrenCount) {
-        hotelDDMethod(15);//Cyber Space
-        ReusableMethods.waitFor(2);
-        generalDataCodeElementi.clear();
-        generalDataCodeElementi.sendKeys(Code);
+hotelDDMethod(2);//Cyber Space
+ReusableMethods.waitFor(2);
+generalDataCodeElementi.clear();
+generalDataCodeElementi.sendKeys(Code);
 
-        ReusableMethods.waitFor(2);
-        getGeneralDataNameElementi.clear();
-        getGeneralDataNameElementi.sendKeys(Name);
-        ReusableMethods.waitFor(2);
+ReusableMethods.waitFor(2);
+getGeneralDataNameElementi.clear();
+getGeneralDataNameElementi.sendKeys(Name);
+ReusableMethods.waitFor(2);
 
-        generalDataLocationElementi.clear();
-        generalDataLocationElementi.sendKeys(Location);
-        ReusableMethods.waitFor(2);
+generalDataLocationElementi.clear();
+generalDataLocationElementi.sendKeys(Location);
+ReusableMethods.waitFor(2);
 
-        generalDataDescriptionElementi.clear();
-        generalDataDescriptionElementi.sendKeys(Description);
-        ReusableMethods.waitFor(2);
+generalDataDescriptionElementi.clear();
+generalDataDescriptionElementi.sendKeys(Description);
+ReusableMethods.waitFor(2);
 
-        generalDataPriceElementi.clear();
-        generalDataPriceElementi.sendKeys(PriceDouble);
-        ReusableMethods.waitFor(2);
+generalDataPriceElementi.clear();
+generalDataPriceElementi.sendKeys(PriceDouble);
+ReusableMethods.waitFor(2);
 
-        roomTypeDDMethod(6);
-        ReusableMethods.waitFor(2);
-        generalDataMaxAdultCountElementi.clear();
-        generalDataMaxAdultCountElementi.sendKeys(MaxAdultCount);
-        ReusableMethods.waitFor(2);
-        generalDataMaxChildrenCountElementi.clear();
-        generalDataMaxChildrenCountElementi.sendKeys(MaxChildrenCount);
-        if (!generalDataIsAvailableElementi.isSelected()) {
-            generalDataIsAvailableElementi.click();
+roomTypeDDMethod(6);
+ReusableMethods.waitFor(2);
+generalDataMaxAdultCountElementi.clear();
+generalDataMaxAdultCountElementi.sendKeys(MaxAdultCount);
+ReusableMethods.waitFor(2);
+generalDataMaxChildrenCountElementi.clear();
+generalDataMaxChildrenCountElementi.sendKeys(MaxChildrenCount);
+
+if (!generalDataIsAvailableElementi.isSelected()) {
+generalDataIsAvailableElementi.click();
         }
 
     }
@@ -248,8 +261,26 @@ public void hotelDDMethod(int index){
 
 public void closeTheWindow(){
 
-Driver.getDriver().close();
+Driver.closeDriver();
 }
+    public void yoneticiOlarakGirisYap2() {
+HMCMainPage hmcMainPage=new HMCMainPage();
+hmcIlkLogin.click();
+hmcMainPage.userNameBox.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
+hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
+hmcMainPage.    idveSifreyeGirLoginButonu.click();
+    }
+
+@FindBy (xpath = "//span[text()='Create a new account']")
+public WebElement createaNewAccountButonu;
+@FindBy (xpath = "//input[@name='UserName']")
+public WebElement userNameBox07;
+
+
+
+
+
+
 
 /*
 @FindBy (className = "btn btn-primary")

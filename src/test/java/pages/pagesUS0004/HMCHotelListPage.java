@@ -72,7 +72,7 @@ public class HMCHotelListPage {
 
     public void AddHotelFormDropdownaKadarGecersizDoldurma() {
         AddHotelCodeTextBoxElementi.sendKeys("@#$", Keys.TAB , "1234",
-                Keys.TAB, "bot in world", Keys.TAB,
+                Keys.TAB, "but in world", Keys.TAB,
                 "HI EVERYBODY",Keys.TAB, "NO AT in this mail");
     }
 }
