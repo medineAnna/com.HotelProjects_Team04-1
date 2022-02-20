@@ -47,9 +47,9 @@ public void BilkLoginButonuGorunurveAktifmiTesti() {
 // ve Tiklayip  onceden belirlenen sifreyle giris yapar.
 Assert.assertTrue(hotelMyCampPage.hmcIlkLogin.isDisplayed(), "Ilk Anasayfa Login Butonu GORUNUR  DEGIL");
 Assert.assertTrue(hotelMyCampPage.hmcIlkLogin.isEnabled(), "Ilk Anasayfa Login Butonu AKTIF  DEGIL");
-    ReusableMethods.waitFor(3);
+ReusableMethods.waitFor(3);
 
-Driver.closeDriver();
+Driver.getDriver().quit();
     }
 
 
@@ -68,8 +68,8 @@ hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
 hmcMainPage. idveSifreyeGirLoginButonu.click();
 Assert.assertTrue(hmcMainPage.yoneticiOlarakGirisYapilincaCikanListOfUsersElementi.isDisplayed(), "Yonetici Olarak Sayfaya Giris Yapilamadi FAILED");
 
-    ReusableMethods.waitFor(3);
-        Driver.closeDriver();
+ReusableMethods.waitFor(3);
+//Driver.closeDriver();
 
     }
 
@@ -152,7 +152,7 @@ public void HgeneralDataSayfasinaGirisTesti(){
         ReusableMethods.waitFor(2);
     hotelMyCampPage.direkGeneralDataSayfasinaGit();
     Assert.assertTrue(hotelMyCampPage.generalDataHotelroomDataText.isDisplayed());
-        Driver.closeDriver();
+
 }
 
     @Test
@@ -183,23 +183,23 @@ System.out.print("Tip DD Listesi =>" + each.getText() + " ");
     @Test
 //10
 public void LodaBilgileriGuncellemeTesti(){
-        ReusableMethods.waitFor(2);
+ReusableMethods.waitFor(2);
 hotelMyCampPage.direkGeneralDataSayfasinaGit();
-hotelMyCampPage. hotelRoomGuncellemeDatasiGonderme("0007","MustafaDRoom1",
+hotelMyCampPage. hotelRoomGuncellemeDatasiGonderme("0007","MustafaDRoom10",
 "Muslihittin mah. No:48  Afrika ",
 "Huzurlu ve Mutlu tatilin adresi",
 "500.000","5","1");
 Assert.assertTrue(hotelMyCampPage.generalDataRoomsUpdateText.isDisplayed(),"Room Guncellenemedi FAILED");
 hotelMyCampPage.generalDataUpdateOKButonElementi.click();
 Driver.getDriver().navigate().back();
-hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom1");
+hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom10");
 hotelMyCampPage.listOfHotelRoomsyellowSearchButton.click();
 ReusableMethods.waitFor(3);
 String actualText=hotelMyCampPage.listOfHotelRoomsNameElementi.getText();
 WebElement odaKayitNameYazisi=Driver.getDriver().findElement(By.xpath("//td[.='MustafaDRoom1']"));
 Assert.assertTrue(odaKayitNameYazisi.isDisplayed(),"Oda Kaydi Basarisiz");
-    ReusableMethods.waitFor(3);
-        Driver.closeDriver();
+ReusableMethods.waitFor(3);
+Driver.closeDriver();
 }
 
     @Test
@@ -207,24 +207,29 @@ public void ModaBilgileriSilmeTesti() throws IOException {
         ReusableMethods.waitFor(2);
 //11
 hotelMyCampPage.direkGeneralDataSayfasinaGit();
-hotelMyCampPage.hotelRoomDeleteDatasiGonderme("0007","MustafaDRoom1",
+hotelMyCampPage.hotelRoomDeleteDatasiGonderme("0007","MustafaDRoom10",
 "Muslihittin mah. No:48  Afrika ",
 "Huzurlu ve Mutlu tatilin adresi",
-"500.000","5","1");
+"510.000","5","1");
 hotelMyCampPage.generalDataSaveButonuElementi.click();
 hotelMyCampPage.generalDataUpdateOKButonElementi.click();
 ReusableMethods.waitFor(2);
 hotelMyCampPage.generalDataDeleteButonuElementi.click();
 ReusableMethods.waitFor(2);
 hotelMyCampPage.generalDataSaveClickOkButonu.click();// ////*********
+      /*
 hotelMyCampPage.endUserName.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
 hotelMyCampPage.endPassword.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
 hotelMyCampPage.endLogInButton.click();
-hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom1");
+hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom10");
 hotelMyCampPage.listOfHotelRoomsyellowSearchButton.click();
 ReusableMethods.getScreenshot("Oda Bilgileri Silindi Teyit Photos");
-    ReusableMethods.waitFor(3);//wsadasd
-        Driver.closeDriver();
+*/
+WebElement errorYazisi=Driver.getDriver().findElement(By.xpath("//div[@class='bootbox-body']"));
+Assert.assertFalse(errorYazisi.isDisplayed());//Dogru
+
+ReusableMethods.waitFor(3);//wsadasd
+Driver.closeDriver();
     }
 /*
 @AfterClass
@@ -233,4 +238,4 @@ Driver.closeDriver();
 }
 */
 
-                        }//************THE END*****************//
+}//************THE END*****************//

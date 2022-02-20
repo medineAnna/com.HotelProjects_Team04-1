@@ -17,8 +17,6 @@ public class US007_1 extends TestBaseRapor {
     SoftAssert softAssert;
     HotelMyCampPage hotelMyCampPage=new HotelMyCampPage();
 
-
-
     @Test
     public void hotelMyCampUrlTesti() {
 
