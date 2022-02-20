@@ -142,6 +142,7 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     }
 
     public void direkPropertiesSayfasinaGit() {
+        ReusableMethods.waitFor(2);
         hotelRoomsWebTablinIsteginSayfasinaGit(5);
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
