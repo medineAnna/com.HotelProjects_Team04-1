@@ -38,7 +38,10 @@ public class US007_7 extends TestBaseRapor {
 //Propertiese Tiklandi testi yap
         hmcMainPage.propertiesSekmesiElementi.click();
         Assert.assertTrue(hmcMainPage.addPropertyYaziElementi.isEnabled());
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(3);
+        actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
+        ReusableMethods.waitFor(2);
+        hotelMyCampPage.logOutButton.click();
         extentTest.pass("WebTable 5. Sayfa 10.Satir Details ve Propertiese Giris Testi Basariyla TAMAMLANDI :)");
        // hotelMyCampPage.closeTheWindow();
     }

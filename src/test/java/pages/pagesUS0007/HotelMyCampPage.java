@@ -125,9 +125,11 @@ public WebElement listOfHotelRoomsyellowSearchButton;
 
     public void hotelRoomsWebTablinIsteginSayfasinaGit(int sayfa) {
   yoneticiOlarakGirisYap2();
+        ReusableMethods.waitFor(2);
   hmcMainPage. hotelManagementElementi.click();
+        ReusableMethods.waitFor(2);
    hmcMainPage.hotelRoomsElementi.click();
-
+ReusableMethods.waitFor(5);
         for (int i = 1; i < sayfa; i++) {
             hmcMainPage.webTableSayfaDegistirmeNextOku.click();
           ReusableMethods.waitFor(2);
@@ -161,7 +163,7 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     }
     public void direkGeneralDataSayfasinaGit(){
         hotelRoomsWebTablinIsteginSayfasinaGit(4);
-        webTableSayfasindakiIsteginDetailsButonunaDirekTikla(6, 9);
+        webTableSayfasindakiIsteginDetailsButonunaDirekTikla(10, 9);
     }
 
 
