@@ -21,14 +21,16 @@ public class US007_8 extends TestBaseRapor {
 
     @Test
 
-    public void photosSayfasinaGirisTesti() {
+    public void generalDataSayfasinaGirisTesti() {
 //8
-        extentTest=extentReports.createTest("Photos Sayfasina Giris Testi","Photos Sayfasina Giris Test Edildi");
+        extentTest=extentReports.createTest("General Data Sayfasina Giris Testi","General Data Sayfasina Giris  Test Edildi");
         hmcMainPage.anaSayfayaGit();
-        hotelMyCampPage.direkPhotostSayfasinaGit();
-        Assert.assertTrue(hmcMainPage.upLoadFilesElementi.isEnabled());
-        ReusableMethods.waitFor(5);
-        extentTest.pass("Photos Sayfasina Giris Testi Basariyla TAMAMLANDI :)");
+        hotelMyCampPage.direkGeneralDataSayfasinaGit();
+        Assert.assertTrue(hotelMyCampPage.generalDataHotelroomDataText.isDisplayed());
+        actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
+        ReusableMethods.waitFor(2);
+        hotelMyCampPage.logOutButton.click();
+        extentTest.pass("General Data Sayfasina Giris Testi TAMAMLANDI :)");
        // hotelMyCampPage.closeTheWindow();
     }
 

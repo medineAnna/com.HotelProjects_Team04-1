@@ -1,6 +1,7 @@
 package tests.US0007;
 
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,31 +24,28 @@ public class US007_11 extends TestBaseRapor {
 
 
     @Test
-    public void odaBilgileriSilmeTesti() throws IOException {
-        extentTest=extentReports.createTest(" Oda Bilgileri Silme Testi"," OdaBilgileri Silme Test Edildi");
-//11
+//10
+    public void odaBilgileriGuncellemeTesti() throws IOException {
+        extentTest=extentReports.createTest("Oda Bilgileri Guncelleme Testi","Oda Bilgileri Guncelleme Test Edildi");
         hmcMainPage.anaSayfayaGit();
         hotelMyCampPage.direkGeneralDataSayfasinaGit();
-        hotelMyCampPage.hotelRoomDeleteDatasiGonderme("0007","MustafaDRoom1",
+        hotelMyCampPage. hotelRoomGuncellemeDatasiGonderme("0007","MustafaDRoom10",
                 "Muslihittin mah. No:48  Afrika ",
                 "Huzurlu ve Mutlu tatilin adresi",
                 "500.000","5","1");
-        hotelMyCampPage.generalDataSaveButonuElementi.click();
+        Assert.assertTrue(hotelMyCampPage.generalDataRoomsUpdateText.isDisplayed(),"Room Guncellenemedi FAILED");
         hotelMyCampPage.generalDataUpdateOKButonElementi.click();
-        ReusableMethods.waitFor(2);
-        hotelMyCampPage.generalDataDeleteButonuElementi.click();
-        ReusableMethods.waitFor(2);
-        hotelMyCampPage.generalDataSaveClickOkButonu.click();
-        hotelMyCampPage.endUserName.sendKeys(ConfigReader.getProperty("HMCValidUsername"));
-        hotelMyCampPage.endPassword.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
-        hotelMyCampPage.endLogInButton.click();
-        hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom1");
+        Driver.getDriver().navigate().back();
+        hotelMyCampPage.listOfHotelRoomsNameBoxDataPush("MustafaDRoom10");
         hotelMyCampPage.listOfHotelRoomsyellowSearchButton.click();
-//ReusableMethods.getScreenshot("Oda Bilgileri Silindi Teyit Photos");
-        ReusableMethods.waitFor(5);
-        extentTest.pass("Oda Bilgileri Silme Testi Basariyla TAMAMLANDI :)");
-       // hotelMyCampPage.closeTheWindow();
-
+        ReusableMethods.waitFor(3);
+        String actualText=hotelMyCampPage.listOfHotelRoomsNameElementi.getText();
+        ReusableMethods.getScreenshot("Oda Bilgileri Kayit Edildi Teyit Photo (US07)");
+        ReusableMethods.waitFor(3);
+        actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
+        ReusableMethods.waitFor(2);
+        hotelMyCampPage.logOutButton.click();
+        extentTest.pass("Oda Bilgileri Kayit");
     }
 
 }
