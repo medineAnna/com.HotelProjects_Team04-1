@@ -2,17 +2,10 @@
 <suite name="US0007 classlar">
     <test name="classlar">
         <classes> <!-- yorum yazmak icin -->
-            <class name="tests.US0007.US007_1"></class>
-            <class name="tests.US0007.US007_2"></class>
-            <class name="tests.US0007.US007_3"></class>  <!-- ard arda hotel my camp log in i bulamadigi icin hata verdi hocada bende calisiyor -->
-            <class name="tests.US0007.US007_4"></class>
-            <class name="tests.US0007.US007_5"></class>
-            <class name="tests.US0007.US007_6"></class>
-            <class name="tests.US0007.US007_7"></class>
-            <class name="tests.US0007.US007_8"></class>
-            <class name="tests.US0007.US007_9"></class>
-            <class name="tests.US0007.US007_10"></class>
-            <class name="tests.US0007.US007_11"></class>
+            <class name="tests.US0007.HMCPozitifRunTestUS0007"></class>
+            <class name="tests.US0007.US007_NegatifTest"></class>
+
+
         </classes>
     </test>
 </suite>

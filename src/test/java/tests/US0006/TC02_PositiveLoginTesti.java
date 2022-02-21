@@ -3,7 +3,10 @@ package tests.US0006;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
-import pages.pagesUS0006.HMCHotelRoomPage;
+<<<<<<< HEAD
+=======
+// import pages.pagesUS0006.HMCHotelRoomPage;
+>>>>>>> mustafaUS0007
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -12,7 +15,11 @@ import utilities.TestBaseRapor;
 public class TC02_PositiveLoginTesti extends TestBaseRapor {
 
     HMCMainPage hmcMainPage;
-    HMCHotelRoomPage hmcHotelRoomPage;
+<<<<<<< HEAD
+
+=======
+  //  HMCHotelRoomPage hmcHotelRoomPage;
+>>>>>>> mustafaUS0007
 
     @Test
     public void positiveLoginTesti(){

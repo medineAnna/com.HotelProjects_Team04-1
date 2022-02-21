@@ -23,8 +23,7 @@ public class US007_5 extends TestBaseRapor {
     public void hotelRoomsSayfayaTiklanincaSayfaninAktifOldugunaDairTest() {
         extentTest=extentReports.createTest("HotelRooms Sayfaya Tiklaninca Sayfanin Aktif Olduguna Dair Test","HotelRooms Sayfaya Tiklaninca Sayfanin Aktif Olduguna Dair Test Edildi");
         hmcMainPage.anaSayfayaGit();
-// 5-)Yonetici Hotel Roomsa Tiklar
-        hmcMainPage.  yoneticiOlarakGirisYap();
+        hotelMyCampPage. yoneticiOlarakGirisYap2();
         hmcMainPage.  hotelManagementElementi.click();
         hmcMainPage.   hotelRoomsElementi.click();
 //Tablo basliklarini Kontrol eder ve Yazdirir
@@ -32,11 +31,14 @@ public class US007_5 extends TestBaseRapor {
             Assert.assertTrue(each.isDisplayed(), "Tablo Basliklari FAILED");
             System.out.print(each.getText() + " ,");
         }
+        System.out.println();
 //Tablodaki 10. Satir 5. sutun Data Bilgisini Yazdirir
         Assert.assertTrue(hotelMyCampPage.hotelRoomsIlkSayfaWebTables(10, 5).isEnabled(), "1. Sayfa Web 10 satir 5. Sutun Bilgisi Gorunmuyor FAILED");
         System.out.println("webTableIstediginSutunuYazdir =>>" +hotelMyCampPage.hotelRoomsIlkSayfaWebTables(10, 5).getText());
         ReusableMethods.waitFor(3);
-        ReusableMethods.waitFor(5);
+        actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
+        ReusableMethods.waitFor(2);
+        hotelMyCampPage.logOutButton.click();
         extentTest.pass("Hotel Rooms Sayfaya Tiklaninca Sayfanin Aktif Olduguna Dair Test Basariyla TAMAMLANDI :)");
         //hotelMyCampPage.closeTheWindow();
     }
