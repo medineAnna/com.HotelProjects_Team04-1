@@ -271,7 +271,7 @@ public void webTable5inciSayfa10SatirDetailsvePropertieseGirisTesti() {
         ReusableMethods.waitFor(2);
         hotelMyCampPage.logOutButton.click();
         extentTest.pass("Oda Bilgilerini Silme Test Edildi :)");
-
+//Test Sonu
     }
 
 
