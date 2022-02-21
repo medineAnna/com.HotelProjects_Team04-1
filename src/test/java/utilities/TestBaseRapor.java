@@ -13,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class TestBaseRapor {
-
     protected static ExtentReports extentReports; //extent report'a ilk atamayi yapar
     protected static ExtentTest extentTest; // test pass veya failed gibi bilgileri kaydeder. Ayrica ekran resmi icin de kullaniriz
     protected static ExtentHtmlReporter extentHtmlReporter; // Html raporu duzenler
@@ -21,12 +20,10 @@ public abstract class TestBaseRapor {
     // Test işlemine başlamadan hemen önce (test methodundan önce değil, tüm test işleminden önce)
     @BeforeTest(alwaysRun = true) // alwaysRun : her zaman çalıştır.
     public void setUpTest() {
-        extentReports = new ExtentReports();// Raporlamayi baslatır
+        extentReports = new ExtentReports(); // Raporlamayi baslatir
+        //rapor oluştuktan sonra raporunuz nereye eklensin istiyorsanız buraya yazıyorsunuz.
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         String filePath = System.getProperty("user.dir") + "/test-output/Rapor"+date+".html";
-
-        //rapor oluştuktan sonra raporunuzu nereye eklensin istiyorsanız buraya yazıyorsunuz.
-
         //oluşturmak istediğimiz raporu (html formatında) başlatıyoruz, filePath ile dosya yolunu belirliyoruz.
         extentHtmlReporter = new ExtentHtmlReporter(filePath);
         extentReports.attachReporter(extentHtmlReporter);
@@ -34,15 +31,17 @@ public abstract class TestBaseRapor {
         // İstediğiniz bilgileri buraya ekeyebiliyorsunuz.
         extentReports.setSystemInfo("Enviroment","QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
-        extentReports.setSystemInfo("Automation Engineer", "Mustafa DONAT");
-        extentHtmlReporter.config().setDocumentTitle(" Son test");
-        extentHtmlReporter.config().setReportName("Bu rapor cok guzel");
+        extentReports.setSystemInfo("Automation Engineer", "Mehmet");
+        extentHtmlReporter.config().setDocumentTitle("Son Test");
+        extentHtmlReporter.config().setReportName("TestNG Reports");
     }
+
 
     // Her test methodundan sonra eğer testte hata varsa, ekran görüntüsü alıp rapora ekliyor
     @AfterMethod(alwaysRun = true)
     public void tearDownMethod(ITestResult result) throws IOException {
-if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
+
+        if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarısızsa
             String screenshotLocation = ReusableMethods.getScreenshot(result.getName());
             extentTest.fail(result.getName());
             extentTest.addScreenCaptureFromPath(screenshotLocation);
@@ -50,8 +49,9 @@ if (result.getStatus() == ITestResult.FAILURE) { // eğer testin sonucu başarı
         } else if (result.getStatus() == ITestResult.SKIP) { // eğer test çalıştırılmadan geçilmezse
             extentTest.skip("Test Case is skipped: " + result.getName()); // Ignore olanlar
         }
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
+
 
     // Raporlandırmayı sonlandırmak icin
     @AfterTest(alwaysRun = true)
