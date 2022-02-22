@@ -37,6 +37,7 @@ public class US007_1 extends TestBaseRapor {
         //hotelMyCampPage.closeTheWindow();//adas adasdsadsad
 
         //hotelMyCampPage.closeTheWindow();//adas asdfsa
+        //Degisiklik yapildi
 
 
     }
