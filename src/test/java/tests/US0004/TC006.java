@@ -3,8 +3,10 @@ package tests.US0004;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import pages.pagesUS0007.HotelMyCampPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
@@ -51,7 +53,10 @@ public class TC006 extends TestBaseRapor {
         extentTest.info("\"Save\" butonuna basildi");
         //9- "Hotel was inserted successfully" yazisini gorunmez.
         ReusableMethods.waitForVisibility(hmcHotelListPage.AddHotelBasariliKayityazisiElementi,15);
-        Assert.assertFalse(hmcHotelListPage.AddHotelBasariliKayityazisiElementi.isDisplayed());
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertFalse(hmcHotelListPage.AddHotelBasariliKayityazisiElementi.isDisplayed());
         extentTest.pass("\"Hotel was inserted successfully\" yazisini GORULDU");
+        HotelMyCampPage ho = new HotelMyCampPage();
         Driver.closeDriver();
+        softAssert.assertAll();
     }}
