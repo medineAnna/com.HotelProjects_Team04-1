@@ -31,7 +31,7 @@ public HMCMainPage(){
     @FindBy(xpath = "//input[@id='UserName']")
     public WebElement userNameBox;
 
-    @FindBy(id = "Password")git
+    @FindBy(id = "Password")
     public WebElement passwordBox;
 
     @FindBy(id = "btnSubmit")
