@@ -73,5 +73,6 @@ hmcHotelListPage.HotelListSearchNameTextBox.sendKeys(ConfigReader.getProperty("h
         //14- Listede olusturdugu oteli gorur.
         Assert.assertFalse(hmcHotelListPage.FirstHotelAtSearchList.getText().isEmpty());
         extentTest.pass("Eklenen otel hotel listte GORULDU");
+        Driver.closeDriver();
     }
 }
