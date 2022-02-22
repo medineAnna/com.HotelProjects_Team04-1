@@ -33,7 +33,11 @@ public class US007_1 extends TestBaseRapor {
 
         ReusableMethods.waitFor(5);
         extentTest.pass("URL Adresi Dogrulandi Testi  Basariyla TAMAMLANDI :)");
+
         //hotelMyCampPage.closeTheWindow();//adas adasdsadsad
+
+        //hotelMyCampPage.closeTheWindow();//adas asdfsa
+
 
     }
 
