@@ -1,6 +1,5 @@
 package tests.US0004;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -58,5 +57,6 @@ ReusableMethods.waitForVisibility(hmcHotelListPage.AddHotelBasariliKayityazisiEl
         extentTest.pass("\"OK\" butonun tiklanabilir oldugu GORULDU");
         hmcHotelListPage.AddHotelBasariliKayitOkButton.click();
         extentTest.info("\"OK\" butonuna basildi");
+        Driver.closeDriver();
 
 }}

@@ -19,13 +19,6 @@ public class HMCMainPage {
 //Sadece Kullanabilirsiniz
 
 
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> mustafaUS0007
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginElementi;
 

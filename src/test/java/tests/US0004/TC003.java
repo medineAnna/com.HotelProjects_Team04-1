@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC003 extends TestBaseRapor {
@@ -40,5 +41,6 @@ public class TC003 extends TestBaseRapor {
                        hmcHotelListPage.AddHotelDropdownElementi.isEnabled()
                );
 extentTest.pass("\"Create Hotel\" formu gecerli bilgilerle DOLDURULABILIR");
+        Driver.closeDriver();
     }
 }

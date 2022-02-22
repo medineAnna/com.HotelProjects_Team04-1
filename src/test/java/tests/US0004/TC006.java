@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import utilities.Driver;
 import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
@@ -52,5 +53,5 @@ public class TC006 extends TestBaseRapor {
         ReusableMethods.waitForVisibility(hmcHotelListPage.AddHotelBasariliKayityazisiElementi,15);
         Assert.assertFalse(hmcHotelListPage.AddHotelBasariliKayityazisiElementi.isDisplayed());
         extentTest.pass("\"Hotel was inserted successfully\" yazisini GORULDU");
-
+        Driver.closeDriver();
     }}

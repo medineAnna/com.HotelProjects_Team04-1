@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC004 extends TestBaseRapor {
@@ -37,5 +38,6 @@ public class TC004 extends TestBaseRapor {
         //9- Tiklamis oldugu type in secilmis oldugunu gorur.
         Assert.assertTrue(select.getFirstSelectedOption().isSelected());
         extentTest.pass("form icerisindeki drop down SECILDI");
+        Driver.closeDriver();
     }
 }
