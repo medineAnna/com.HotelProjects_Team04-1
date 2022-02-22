@@ -26,8 +26,6 @@ public HMCMainPage(){
 //Sadece Kullanabilirsiniz
 
 
-
-
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginElementi;
 //

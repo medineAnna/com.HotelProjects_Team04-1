@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC001 extends TestBaseRapor {
@@ -35,6 +36,7 @@ hmcHotelListPage.HotelListElementi.click();
     //7- "Add Hotel" butonuna erisebilir.
     Assert.assertTrue(hmcHotelListPage.AddHotelButtonElementi.isEnabled());
     extentTest.pass("\"Add Hotel\" butonu ERISILEBILIR ");
+    Driver.closeDriver();
 }
 
 }

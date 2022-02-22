@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class TC002 extends TestBaseRapor {
@@ -32,6 +33,7 @@ public class TC002 extends TestBaseRapor {
         //7- "create hotel" formunu gorur.
      Assert.assertTrue(hmcHotelListPage.CreateHotelFormElementi.isDisplayed());
         extentTest.pass("\"Create Hotel\" formu GORUNUR");
+        Driver.closeDriver();
 
 
 }}
