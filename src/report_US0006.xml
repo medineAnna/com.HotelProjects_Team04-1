@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >   <!--yorum yazmak icin    -->
+<suite name="hotel team04">
+    <test name="Us0006">
+        <classes>
+            <class name="tests.US0006.TC01_LoginButonuTesti"></class>
+            <class name="tests.US0006.TC02_PositiveLoginTesti"></class>
+            <class name="tests.US0006.TC03_ListOfHotelroomsTesti"></class>
+            <class name="tests.US0006.TC04_CreateHotelroomTesti"></class>
+            <class name="tests.US0006.TC05_BasariliKayitTesti"></class>
+        </classes>
+    </test>
+</suite>

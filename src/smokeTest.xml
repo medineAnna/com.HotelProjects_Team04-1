@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="US0007 classlar">
+    <test name="classlar">
+        <classes> <!-- yorum yazmak icin -->
+
+            <class name="tests.US0001.Tc_01"></class>
+             <!-- Tc_01 HMC Url Testi  -->
+            <class name="tests.US0002.TC_0005"></class>
+            <!-- Tc_01 HMC Sayfasina Yonetici Olarak Giris Yapildi mi  Testi  -->
+            <class name="tests.US0003.TC_005"></class>
+            <!-- Tc_01 HMC Sayfasina Kullanici Olarak Giris Yapildi mi Testi  -->
+            <class name="tests.US0004.TC007"></class>
+            <!-- Otel Ekleme Testi yapildi  -->
+            <!-- ************** US0005 Ekelenemedi ****************** -->
+            <class name="tests.US0006.TC04_CreateHotelroomTesti"></class>
+            <!--Hotel Odasi Ekleme Testi-->
+            <class name="tests.US0008.TC_04"></class>
+            <!--Hotel Rezervasyon Bilgileri Eklenebiliyor mu? -->
+            <class name="tests.US0010.TestCase05"></class>
+            <!--Hotel Oda Rezervasyonu Yapilabiliyor mu -->
+            <class name="tests.US0007.US007_11"></class>
+            <!--Hotel Oda Bilgileri Guncelleme Testi-->
+            <class name="tests.US0007.US007_12"></class>
+            <!--Hotel Oda Bilgileri Silmede Error Veriyor Testi-->
+            <class name="tests.US0009.TC004"></class>
+            <!--Hotel Rezervasyon Bilgileri Degisiklik Yapilabiliyormu Failed Veriyor -->
+            <class name="tests.US0009.TC005"></class>
+            <!--Hotel Rezervasyon Bilgileri Silinebiliyor mu Failed Veriyor -->
+        </classes>
+    </test>
+</suite>

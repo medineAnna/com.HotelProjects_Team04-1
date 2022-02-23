@@ -25,6 +25,7 @@ public HMCMainPage(){
 //Buradaki Kodlari kimse Degistirilmeyecek Ekleme Yapilmayacak
 //Sadece Kullanabilirsiniz
 
+
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginElementi;
 //
