@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class TC003 extends TestBaseRapor {
@@ -24,6 +25,7 @@ public class TC003 extends TestBaseRapor {
         hmcMainPage.hotelManagementElementi.click();
         extentTest.info("Hotel Management'a tiklandi");
         //5- Gorunur hale gelen "Hotel List" kismina tiklar.
+        ReusableMethods.waitFor(3);
         hmcHotelListPage.HotelListElementi.click();
         extentTest.info("\"Hotel List\" sayfasina girildi");
         //6- "Add Hotel" butonuna tiklar.

@@ -56,8 +56,6 @@ public class TC006 extends TestBaseRapor {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(hmcHotelListPage.AddHotelBasariliKayityazisiElementi.isDisplayed());
         extentTest.pass("\"Hotel was inserted successfully\" yazisini GORULDU");
-        HotelMyCampPage ho = new HotelMyCampPage();
-        ho.logOutButton.click();
         Driver.closeDriver();
         softAssert.assertAll();
     }}

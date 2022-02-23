@@ -109,8 +109,10 @@ public WebElement listOfHotelRoomsyellowSearchButton;
 
     @FindBy (xpath = "//a[.='Log out']")
 public WebElement getLogOutButton;
+
+
  //@FindBy (className = "btn btn-primary")
- //public WebElement generalDataDeleteOnaylamaButonu5;//6
+ //public WebElement generalDataDeleteOnaylamaButonu5;
     //Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
 
     public void listOfHotelRoomsNameBoxDataPush(String data){

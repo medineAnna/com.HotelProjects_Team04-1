@@ -42,6 +42,7 @@ public class TC_005 {
 
         //Step   6-'User Data was inserted successfully' yazisini gorur
         ReusableMethods.getScreenshot("User Data was inserted successfully yazisi");
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(hmcPageUS003.UseDatawasInsertedSuccessfullyyazisi.isDisplayed());
         hmcPageUS003.uDwISyazisiOkButonu.click();
 

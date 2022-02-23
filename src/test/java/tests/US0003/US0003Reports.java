@@ -3,6 +3,7 @@ package tests.US0003;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.pagesUS0003.HMCPageUS003;
+import utilities.ReusableMethods;
 import utilities.TestBaseRapor;
 
 public class US0003Reports extends TestBaseRapor {
@@ -43,6 +44,7 @@ public class US0003Reports extends TestBaseRapor {
 
 
         //Step   6-'User Data was inserted successfully' yazisini gorur
+        ReusableMethods.waitFor(3);
         Assert.assertTrue(hmcPageUS003.UseDatawasInsertedSuccessfullyyazisi.isDisplayed());
         hmcPageUS003.uDwISyazisiOkButonu.click();
         extentTest.pass("'User Data was inserted successfully' yazisinin goruldugu test edildi");

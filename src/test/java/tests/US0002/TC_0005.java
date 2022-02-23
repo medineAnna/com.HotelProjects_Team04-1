@@ -36,7 +36,7 @@ public class TC_0005 extends TestBaseRapor {
 
             softAssert.assertTrue(hotelMyCampPage.ilkLoginLinki.isDisplayed());
             extentTest.info("ilk Login butonu goruldu");
-
+            ReusableMethods.waitFor(3);
             hotelMyCampPage.ilkLoginLinki.click();
             extentTest.info("Ilk login linkine tiklandi");
 
