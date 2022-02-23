@@ -60,8 +60,8 @@ public class TC_05 extends TestBaseRapor {
         hotelMyCampPage08.priceElementi.click();
 
 
-        actions.sendKeys("1000").sendKeys(Keys.TAB).sendKeys("02/23/2022")
-                .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("02/26/2022").sendKeys(Keys.TAB)
+        actions.sendKeys("1000").sendKeys(Keys.TAB).sendKeys("03/23/2022")
+                .sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys("04/26/2022").sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB).sendKeys("1").sendKeys(Keys.TAB).sendKeys("0").sendKeys(Keys.TAB)
                 .sendKeys("Mehmet MEHMET").sendKeys(Keys.TAB).sendKeys("9999999999").sendKeys(Keys.TAB)
                 .sendKeys("hello@gmail.com").sendKeys(Keys.TAB).sendKeys("İYİ TATİLLER PATRON")
@@ -74,17 +74,18 @@ public class TC_05 extends TestBaseRapor {
         extentTest.info("Approved test edildi");
 
         //"SAVE" butonu tiklanir
+        ReusableMethods.waitFor(2);
         hotelMyCampPage08.saveButonu.click();
         extentTest.info("SAVE test edildi");
 
        //"RoomReservation was inserted successfully" yazisi gorunur
 
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
         Assert.assertTrue(hotelMyCampPage08.roomReservationwasinsertedsuccessfullyYazisi.isDisplayed());
         extentTest.pass("RoomReservation was inserted successfully test edildi");
 
 
-        ReusableMethods.getScreenshot("05");
+        ReusableMethods.getScreenshot("TC_05");
 
         //"OK" butonuna tiklar
         hotelMyCampPage08.okButonu.click();
