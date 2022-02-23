@@ -73,20 +73,5 @@ public class TC_04 extends TestBaseRapor {
          hotelMyCampPage08.saveButonu.click();
          extentTest.info("SAVE test edildi");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

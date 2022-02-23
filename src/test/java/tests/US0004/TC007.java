@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.pagesUS0004.HMCHotelListPage;
+import pages.pagesUS0007.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -73,6 +74,9 @@ hmcHotelListPage.HotelListSearchNameTextBox.sendKeys(ConfigReader.getProperty("h
         //14- Listede olusturdugu oteli gorur.
         Assert.assertFalse(hmcHotelListPage.FirstHotelAtSearchList.getText().isEmpty());
         extentTest.pass("Eklenen otel hotel listte GORULDU");
+        HotelMyCampPage ho = new HotelMyCampPage();
+        ho.logOutButton.click();
+
         Driver.closeDriver();
     }
 }

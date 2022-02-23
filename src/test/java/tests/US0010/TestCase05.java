@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HMCPage10;
+import pages.pagesUS0007.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
@@ -55,6 +56,10 @@ public class TestCase05 extends TestBaseRapor {
         System.out.println("endDate yazisi"+hmcPage10.endDate.getText());
         Assert.assertTrue(hmcPage10.approved.isDisplayed());
         System.out.println("approved yazisi"+hmcPage10.approved.getText());
+
+        HotelMyCampPage ho = new HotelMyCampPage();
+        ho.logOutButton.click();
+
         extentTest.pass("\"Reservations\" sayfasindaki reserve edilen oda kullanici sayfasinda gorulur");
         extentTest.info("Reserve edilen ayni oda, ayni tarihte baska kullanici tarafindan da reserve edilebiliniyor");
     }

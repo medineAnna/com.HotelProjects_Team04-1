@@ -107,6 +107,8 @@ public WebElement listOfHotelRoomsyellowSearchButton;
     @FindBy (xpath = "(//div[@class='caption'])[2]")
     public WebElement generalDataHotelroomDataText;
 
+    @FindBy (xpath = "//a[.='Log out']")
+public WebElement getLogOutButton;
  //@FindBy (className = "btn btn-primary")
  //public WebElement generalDataDeleteOnaylamaButonu5;//6
     //Bu ELEMENT BIR BUG DIKKAAAAT!!!!!!!!!!!!!!!!!!
@@ -154,16 +156,19 @@ ReusableMethods.waitFor(5);
        hmcMainPage. propertiesSekmesiElementi.click();
     }
     public void direkPhotostSayfasinaGit() {
+        ReusableMethods.waitFor(2);
         hotelRoomsWebTablinIsteginSayfasinaGit(5);
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(2);
         webTableSayfasindakiIsteginDetailsButonunaDirekTikla(10, 9);
+
       hmcMainPage.  photosSekmesiElementi.click();
     }
     public void direkGeneralDataSayfasinaGit(){
-        hotelRoomsWebTablinIsteginSayfasinaGit(4);
+
+        hotelRoomsWebTablinIsteginSayfasinaGit(5);
         webTableSayfasindakiIsteginDetailsButonunaDirekTikla(10, 9);
     }
 

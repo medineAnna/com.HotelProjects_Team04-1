@@ -79,7 +79,7 @@ hmcMainPage. passwordBox.sendKeys(ConfigReader.getProperty("HMCValidPassword"));
         hmcMainPage. idveSifreyeGirLoginButonu.click();
         Assert.assertTrue(hmcMainPage.yoneticiOlarakGirisYapilincaCikanListOfUsersElementi.isDisplayed(), "Yonetici Olarak Sayfaya Giris Yapilamadi FAILED");
         actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         hotelMyCampPage.logOutButton.click();
         extentTest.pass("Sayfaya Sifreyle Giris Yapildigina Dair Test Basariyla TAMAMLANDI :)");
     }
@@ -183,8 +183,11 @@ public void webTable5inciSayfa10SatirDetailsvePropertieseGirisTesti() {
         actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);
         hotelMyCampPage.logOutButton.click();
+        Driver.closeDriver();
         extentTest.pass("General Data Sayfasina Giris Testi TAMAMLANDI :)");
+
     }
+    /*
     @Test(priority = 9)
     public void photosSayfasinaGirisTesti() {
         extentTest=extentReports.createTest("Photos Sayfasina Giris Testi ","Photos Sayfasina Giris Test Edildi");
@@ -200,6 +203,7 @@ public void webTable5inciSayfa10SatirDetailsvePropertieseGirisTesti() {
     }
 
 //*/
+    /*
     @Test(priority = 10)
     public void propertiesSayfasiErisimTesti() {
         extentTest=extentReports.createTest("Properties Sayfasi Erisim Testi","Properties Sayfasi Erisim Test Edildi");
@@ -219,6 +223,7 @@ public void webTable5inciSayfa10SatirDetailsvePropertieseGirisTesti() {
         hotelMyCampPage.logOutButton.click();
         extentTest.pass("Properties Sayfasi Erisim Testi BASARIYLA TEST EDILDI:) ");
     }
+    */
     //************************************************
     @Test(priority = 11)
 //10
@@ -237,7 +242,7 @@ public void webTable5inciSayfa10SatirDetailsvePropertieseGirisTesti() {
         hotelMyCampPage.listOfHotelRoomsyellowSearchButton.click();
         ReusableMethods.waitFor(3);
         String actualText=hotelMyCampPage.listOfHotelRoomsNameElementi.getText();
-       ReusableMethods.getScreenshot("Oda Bilgileri Kayit Edildi Teyit Photo (US07)");
+    //   ReusableMethods.getScreenshot("Oda Bilgileri Kayit Edildi Teyit Photo (US07)");
         ReusableMethods.waitFor(3);
         actions.moveToElement(hotelMyCampPage.managerDropDownButton).perform();
         ReusableMethods.waitFor(2);

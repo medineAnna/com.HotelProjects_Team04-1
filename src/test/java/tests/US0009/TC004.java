@@ -4,8 +4,10 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.US0009.US009Page;
+import pages.pagesUS0007.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.TestBaseRapor;
@@ -20,7 +22,7 @@ public class TC004 extends TestBaseRapor {
     //7-ContactPhone ve ContactEmail bilgileri degistirir
     //8-Save butonuna basar
 
-
+     SoftAssert softAssert=new SoftAssert();
     HMCMainPage hmcMainPage;
     US009Page us009Page;
     @Test
@@ -63,7 +65,13 @@ public class TC004 extends TestBaseRapor {
         us009Page.saveButton.click();
         extentTest.info("save butonuna tiklandi");
 
-        Assert.assertTrue(us009Page.saveEdildi.isEnabled());
+        softAssert.assertTrue(us009Page.saveEdildi.isEnabled());//*
+
         extentTest.pass("degisiklikler kaydedildi");
+        HotelMyCampPage ho = new HotelMyCampPage();
+        ho.logOutButton.click();
+        Driver.closeDriver();
+        softAssert.assertAll();//*
+
     }
 }

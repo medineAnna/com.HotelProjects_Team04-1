@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 import pages.OrtakHMCPageBurayiSakinKurcalama.HMCMainPage;
 import pages.US0006.HMCHotelRoomPage;
 import pages.US0006.HMCHotelRoomPage;
+import pages.pagesUS0007.HotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
@@ -38,6 +39,10 @@ public class TC04_CreateHotelroomTesti extends TestBaseRapor {
         hmcHotelRoomPage.addHotelRoomButonu.click();
         extentTest.info("add hotelroom butonuna tiklandi");
         Assert.assertTrue( hmcHotelRoomPage.createHotelroomElementi.isDisplayed());
+        HotelMyCampPage ho = new HotelMyCampPage();
+        ho.logOutButton.click();
+        Driver.closeDriver();
+
         extentTest.pass("create hotelroom sayfasina ulasildi");
 
     }
